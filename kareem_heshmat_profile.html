@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kareem Hassan Heshmat – Digital Solutions Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --gold: #B8965A; --gold-light: #E8D5B0; --gold-pale: #F7F1E8;
+    --ink: #1A1A1A; --ink-mid: #444; --ink-light: #888;
+    --cream: #FDFAF5; --line: rgba(184,150,90,0.25);
+  }
+  body { background: var(--cream); font-family: 'Inter', sans-serif; color: var(--ink); }
+  .site { max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
+
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 28px 0 20px; border-bottom: 0.5px solid var(--line); }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .nav-links a { font-size: 12px; font-weight: 400; color: var(--ink-mid); text-decoration: none; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+
+  .hero { display: grid; grid-template-columns: 1fr 200px; gap: 48px; align-items: end; padding: 60px 0 52px; border-bottom: 0.5px solid var(--line); }
+  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: 46px; font-weight: 400; line-height: 1.1; color: var(--ink); margin-bottom: 12px; }
+  .hero-title { font-size: 15px; font-weight: 400; color: var(--gold); margin-bottom: 8px; }
+  .hero-sub { font-size: 14px; font-weight: 300; color: var(--ink-mid); line-height: 1.7; max-width: 420px; margin-bottom: 28px; }
+  .hero-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+  .badge { font-size: 11px; font-weight: 400; letter-spacing: 0.05em; color: var(--ink-mid); border: 0.5px solid var(--line); padding: 5px 12px; border-radius: 2px; }
+  .hero-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: #fff; font-size: 13px; font-weight: 500; padding: 12px 24px; border-radius: 2px; text-decoration: none; }
+  .hero-cta:hover { opacity: 0.88; }
+  .hero-photo { width: 200px; height: 240px; background: var(--gold-pale); border: 0.5px solid var(--gold-light); border-radius: 2px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: var(--gold); }
+  .hero-photo i { font-size: 48px; }
+  .hero-photo span { font-size: 11px; color: var(--ink-light); letter-spacing: 0.07em; }
+
+  section { padding: 56px 0; border-bottom: 0.5px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 36px; }
+  .section-num { font-size: 11px; font-weight: 500; color: var(--gold); letter-spacing: 0.12em; min-width: 24px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--ink); }
+  .section-line { flex: 1; height: 0.5px; background: var(--line); }
+
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .about-text { font-size: 14px; font-weight: 300; line-height: 1.85; color: var(--ink-mid); }
+  .about-stats { display: flex; flex-direction: column; gap: 20px; }
+  .stat-item { border-left: 2px solid var(--gold); padding-left: 16px; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 400; color: var(--ink); }
+  .stat-label { font-size: 12px; color: var(--ink-light); letter-spacing: 0.05em; margin-top: 2px; }
+
+  .highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .highlight-card { padding: 18px; border: 0.5px solid var(--line); border-radius: 2px; background: #fff; }
+  .highlight-icon { font-size: 20px; color: var(--gold); margin-bottom: 10px; }
+  .highlight-text { font-size: 13px; font-weight: 300; color: var(--ink-mid); line-height: 1.65; }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .skill-card { padding: 18px; border: 0.5px solid var(--line); border-radius: 2px; background: #fff; }
+  .skill-category { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 12px; }
+  .skill-list { display: flex; flex-direction: column; gap: 8px; }
+  .skill-row { display: flex; align-items: center; gap: 8px; }
+  .skill-name { font-size: 12px; color: var(--ink-mid); flex: 1; }
+  .skill-bar { flex: 2; height: 2px; background: var(--gold-light); border-radius: 1px; }
+  .skill-fill { height: 100%; background: var(--gold); border-radius: 1px; }
+
+  .exp-list { display: flex; flex-direction: column; gap: 32px; }
+  .exp-item { display: grid; grid-template-columns: 150px 1fr; gap: 24px; }
+  .exp-period { font-size: 12px; color: var(--gold); letter-spacing: 0.03em; padding-top: 3px; line-height: 1.5; }
+  .exp-role { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+  .exp-company { font-size: 13px; color: var(--ink-light); margin-bottom: 8px; }
+  .exp-desc { font-size: 13px; font-weight: 300; color: var(--ink-mid); line-height: 1.7; }
+  .exp-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .exp-tag { font-size: 10px; color: var(--gold); border: 0.5px solid var(--gold-light); padding: 3px 8px; border-radius: 2px; background: var(--gold-pale); }
+
+  .pubs-list { display: flex; flex-direction: column; gap: 12px; }
+  .pub-item { display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 14px; border: 0.5px solid var(--line); border-radius: 2px; background: #fff; }
+  .pub-id { font-size: 11px; font-weight: 500; color: var(--gold); font-family: monospace; padding-top: 2px; }
+  .pub-title { font-size: 13px; color: var(--ink-mid); line-height: 1.5; }
+  .pub-venue { font-size: 11px; color: var(--ink-light); margin-top: 3px; }
+
+  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .contact-tagline { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--ink); line-height: 1.4; margin-bottom: 16px; }
+  .contact-text { font-size: 14px; font-weight: 300; color: var(--ink-mid); line-height: 1.7; }
+  .contact-links { display: flex; flex-direction: column; gap: 12px; }
+  .contact-link { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 0.5px solid var(--line); border-radius: 2px; background: #fff; text-decoration: none; color: var(--ink); font-size: 13px; transition: border-color 0.2s; }
+  .contact-link:hover { border-color: var(--gold); }
+  .contact-link i { font-size: 18px; color: var(--gold); }
+  .link-text { flex: 1; }
+  .link-label { font-size: 10px; color: var(--ink-light); margin-top: 1px; }
+
+  footer { margin-top: 56px; padding-top: 24px; border-top: 0.5px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--ink); }
+  .footer-note { font-size: 12px; color: var(--ink-light); }
+
+  @media (max-width: 640px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-photo { display: none; }
+    .hero-name { font-size: 36px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .highlights-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 4px; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .pub-item { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="site">
+
+  <nav>
+    <span class="nav-logo">Kareem Heshmat</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <p class="hero-eyebrow">Digital Solutions · Oil &amp; Gas · Middle East</p>
+      <h1 class="hero-name">Kareem Hassan<br>Heshmat</h1>
+      <p class="hero-title">Sr. Engineer – Production Automation &amp; Software Services</p>
+      <p class="hero-sub">15+ years delivering digital transformation and operational excellence across the Middle East — from SCADA and LOWIS deployments to ForeSite optimization for 9,000+ wells.</p>
+      <div class="hero-badges">
+        <span class="badge">Weatherford KSAB</span>
+        <span class="badge">Egyptian · DOB Apr 1984</span>
+        <span class="badge">Arabic &amp; English</span>
+      </div>
+      <a class="hero-cta" href="mailto:Kareem.heshmat@Weatherford.com">
+        <i class="ti ti-mail"></i>
+        Get in touch
+      </a>
+    </div>
+    <div class="hero-photo">
+      <i class="ti ti-user-circle"></i>
+      <span>Add your photo</span>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">About</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <p class="about-text">
+        Accomplished Digital Solutions leader with over 15 years of experience delivering operational excellence and digital transformation across the Middle East. Proven record in managing large-scale automation projects, integrating digital platforms, and leading multi-disciplinary teams to drive production optimization and business growth.<br><br>
+        Expert in Weatherford's ForeSite, CygNet, and LOWIS systems, with deep understanding of oilfield digitalization, IoT, EDGE computing, Automation equipment, VSD and SCADA. Strong commercial acumen with P&amp;L accountability and a passion for developing talent and operational capability across geozones.
+      </p>
+      <div class="about-stats">
+        <div class="stat-item">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Years of industry experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">9,000+</div>
+          <div class="stat-label">ALS wells managed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">7</div>
+          <div class="stat-label">SPE papers published</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="highlights">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Leadership highlights</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <div class="highlight-icon"><i class="ti ti-topology-star-3"></i></div>
+        <div class="highlight-text">Directed digital transformation for 9,000+ ALS wells in Bahrain, integrating ForeSite and CygNet for real-time optimization.</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon"><i class="ti ti-chart-bar"></i></div>
+        <div class="highlight-text">Led multi-million-dollar automation and software projects, achieving 100% on-time delivery and exceptional client satisfaction.</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon"><i class="ti ti-report-money"></i></div>
+        <div class="highlight-text">Maintained area-level P&amp;L accountability — overseeing budgeting, cost control, and forecasting to improve profitability.</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon"><i class="ti ti-users"></i></div>
+        <div class="highlight-text">Strengthened Weatherford's regional business through BD collaboration with Bapco Upstream, Aramco, Wafra Joint Operation and KOC.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Skills</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-category">Digital &amp; Software</div>
+        <div class="skill-list">
+          <div class="skill-row"><span class="skill-name">ForeSite / CygNet</span><div class="skill-bar"><div class="skill-fill" style="width:98%"></div></div></div>
+          <div class="skill-row"><span class="skill-name">LOWIS / SCADA</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+          <div class="skill-row"><span class="skill-name">SQL / ODBC</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+          <div class="skill-row"><span class="skill-name">IoT / EDGE / Cloud</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Engineering</div>
+        <div class="skill-list">
+          <div class="skill-row"><span class="skill-name">Oilfield Automation</span><div class="skill-bar"><div class="skill-fill" style="width:98%"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Production Optimization</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+          <div class="skill-row"><span class="skill-name">VSD / ALS Systems</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Networking / CCNA</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Business &amp; Leadership</div>
+        <div class="skill-list">
+          <div class="skill-row"><span class="skill-name">P&amp;L Management</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Project Planning</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Stakeholder Mgmt</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Team Coaching</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Experience</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div class="exp-period">Apr 2019 – Present</div>
+        <div>
+          <div class="exp-role">Sr. Engineer / Team Lead – KSA &amp; Bahrain Geozone</div>
+          <div class="exp-company">Weatherford</div>
+          <div class="exp-desc">Lead all digital and automation operations across Bahrain and KSA with full responsibility for execution, delivery, and client satisfaction. Manage multi-project portfolios including Tatweer Petroleum's digital transformation and Aramco ForeSite deployment. Oversee resource planning, crew utilization, budgeting, cost control, and project forecasting.</div>
+          <div class="exp-tags"><span class="exp-tag">ForeSite</span><span class="exp-tag">CygNet</span><span class="exp-tag">P&amp;L</span><span class="exp-tag">Aramco</span><span class="exp-tag">Bapco</span></div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-period">2016 – 2019</div>
+        <div>
+          <div class="exp-role">Sr. Engineer / Project Lead – KOC Pump Watcher</div>
+          <div class="exp-company">Weatherford · Kuwait</div>
+          <div class="exp-desc">Directed ForeSite and CygNet deployment across North, Southeast, and West Kuwait fields. Led daily digital operations, well monitoring, and data analysis to improve production performance. Managed field teams, software integration, and post-job evaluations to enhance service quality.</div>
+          <div class="exp-tags"><span class="exp-tag">ForeSite</span><span class="exp-tag">CygNet</span><span class="exp-tag">KOC</span><span class="exp-tag">Well Monitoring</span></div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-period">2011 – 2016</div>
+        <div>
+          <div class="exp-role">Software &amp; Communication Engineer / Lead</div>
+          <div class="exp-company">Weatherford · Chevron Kuwait Joint Operations</div>
+          <div class="exp-desc">Led implementation of LOWIS SCADA across 800+ ALS wells (SRP, ESP, PCP, and WI). Delivered PCP and RRL Pump Watcher projects including system architecture, deployment, and analysis. Managed software upgrades and database integration via SQL and ODBC.</div>
+          <div class="exp-tags"><span class="exp-tag">LOWIS</span><span class="exp-tag">SCADA</span><span class="exp-tag">SQL</span><span class="exp-tag">800+ Wells</span></div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-period">2010 – 2011</div>
+        <div>
+          <div class="exp-role">Field Engineer – Kuwait Digital Oil Field (KwIDF)</div>
+          <div class="exp-company">Weatherford · KOC</div>
+          <div class="exp-desc">Managed instrumentation setup, calibration, and automation for digital well control systems. Oversaw SCADA configuration, Redeye, and flow meter integration. Supported customer operations through data monitoring, troubleshooting, and remote control configuration.</div>
+          <div class="exp-tags"><span class="exp-tag">SCADA</span><span class="exp-tag">Instrumentation</span><span class="exp-tag">KOC</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">SPE publications</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="pubs-list">
+      <div class="pub-item">
+        <div class="pub-id">SPE-175249-MS</div>
+        <div>
+          <div class="pub-title">Exceptional Management and Optimization for Intelligently Controlled Wells</div>
+          <div class="pub-venue">Wafra Field</div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-id">SPE-181101-MS</div>
+        <div>
+          <div class="pub-title">Real-Time Surveillance, Analysis and Control via Secured Digital Intelligent Technology</div>
+          <div class="pub-venue">Wafra Field</div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-id">SPE-188262-MS</div>
+        <div>
+          <div class="pub-title">Real Time Intelligent Alarm and Surveillance System in Heavy Oil Project</div>
+          <div class="pub-venue">North Kuwait</div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-id">SPE-188963-MS</div>
+        <div>
+          <div class="pub-title">Integrated Deployment of Digital Oil Field in Multiple Kuwait Areas in One Platform and Benefits Realized</div>
+          <div class="pub-venue">Kuwait</div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-id">SPE-193800-MS</div>
+        <div>
+          <div class="pub-title">Improving Sucker Rod Pump Performance and Overall Production After Applying Continuous Steam Injection in Heavy Oil Project</div>
+          <div class="pub-venue">North Kuwait</div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-id">SPE-194809-MS</div>
+        <div>
+          <div class="pub-title">Production Optimization Challenges and Solutions in a Heavy Oil Field</div>
+          <div class="pub-venue">North Kuwait</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Contact</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-inner">
+      <div>
+        <p class="contact-tagline">Open to senior opportunities across the MENA region.</p>
+        <p class="contact-text">Experienced in Bahrain, Kuwait, Saudi Arabia, and UAE. Available for Area Operations Manager roles, digital transformation leadership, and strategic advisory engagements in the oil &amp; gas sector.</p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:Kareem.heshmat@Weatherford.com">
+          <i class="ti ti-mail"></i>
+          <span class="link-text">
+            <div>Kareem.heshmat@Weatherford.com</div>
+            <div class="link-label">Email</div>
+          </span>
+          <i class="ti ti-arrow-right"></i>
+        </a>
+        <a class="contact-link" href="tel:+97333687500">
+          <i class="ti ti-phone"></i>
+          <span class="link-text">
+            <div>+973 3368 7500</div>
+            <div class="link-label">Phone · Bahrain</div>
+          </span>
+          <i class="ti ti-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-name">Kareem Hassan Heshmat</span>
+    <span class="footer-note">&copy; 2026 · All rights reserved</span>
+  </footer>
+
+</div>
+</body>
+</html>
